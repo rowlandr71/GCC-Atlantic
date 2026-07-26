@@ -12,16 +12,18 @@ export default function AboutPage() {
   return (
     <>
       {/* Page header ----------------------------------------------------- */}
-      <section className="section section--dark section--tight">
-        <div className="container" style={{ maxWidth: "44ch" }}>
-          <p className="eyebrow">About GCC</p>
-          <h1 style={{ fontSize: "clamp(2.1rem, 5vw, 3.2rem)", color: "#fff" }}>
-            A holding company, built to endure.
-          </h1>
-          <p className="lead">
-            {site.incorporation} We hold diversified investments for the long
-            term and govern them with deliberate, documented care.
-          </p>
+      <section className="section section--dark section--deep section--tight">
+        <div className="container">
+          <div style={{ maxWidth: "44ch" }}>
+            <p className="eyebrow">About GCC</p>
+            <h1 style={{ fontSize: "clamp(2.1rem, 5vw, 3.2rem)", color: "#fff" }}>
+              A holding company, built to endure.
+            </h1>
+            <p className="lead">
+              {site.incorporation} We hold diversified investments for the long
+              term and govern them with deliberate, documented care.
+            </p>
+          </div>
         </div>
       </section>
 

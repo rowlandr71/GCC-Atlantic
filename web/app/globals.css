@@ -98,6 +98,10 @@ a {
 .section--dark h3 { color: #fff; }
 .section--dark .eyebrow { color: var(--brass-soft); }
 
+/* Deeper page-header variant — matches the home hero's navy. Layer on top of
+   .section--dark (which supplies the light text colors). */
+.section--deep { background: var(--navy-deep); }
+
 /* Eyebrow / kicker ------------------------------------------------------- */
 .eyebrow {
   font-family: var(--font-sans);

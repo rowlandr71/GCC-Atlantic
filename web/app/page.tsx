@@ -6,22 +6,24 @@ export default function HomePage() {
     <>
       {/* Hero ------------------------------------------------------------ */}
       <section className="hero">
-        <div className="container hero__inner">
-          <p className="eyebrow">Equity holding &amp; investment</p>
-          <h1>Capital, held with discipline.</h1>
-          <p className="lead">
-            GCC is an equity holding and investment company incorporated in
-            Nigeria. We hold and steward a diversified portfolio of investments
-            across Nigerian and international markets, governed by a written
-            framework rather than by improvisation.
-          </p>
-          <div className="hero__actions">
-            <Link href="/about" className="btn btn--primary">
-              About GCC
-            </Link>
-            <Link href="/contact" className="btn btn--ghost">
-              Get in touch
-            </Link>
+        <div className="container">
+          <div className="hero__inner">
+            <p className="eyebrow">Equity holding &amp; investment</p>
+            <h1>Capital, held with discipline.</h1>
+            <p className="lead">
+              GCC is an equity holding and investment company incorporated in
+              Nigeria. We hold and steward a diversified portfolio of investments
+              across Nigerian and international markets, governed by a written
+              framework rather than by improvisation.
+            </p>
+            <div className="hero__actions">
+              <Link href="/about" className="btn btn--primary">
+                About GCC
+              </Link>
+              <Link href="/contact" className="btn btn--ghost">
+                Get in touch
+              </Link>
+            </div>
           </div>
         </div>
       </section>

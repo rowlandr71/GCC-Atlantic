@@ -11,16 +11,18 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="section section--dark section--tight">
-        <div className="container" style={{ maxWidth: "44ch" }}>
-          <p className="eyebrow">Contact</p>
-          <h1 style={{ fontSize: "clamp(2.1rem, 5vw, 3.2rem)", color: "#fff" }}>
-            Start a conversation.
-          </h1>
-          <p className="lead">
-            Correspondence is welcome from partners, counterparties, and those
-            we do business with. We aim to reply thoughtfully rather than quickly.
-          </p>
+      <section className="section section--dark section--deep section--tight">
+        <div className="container">
+          <div style={{ maxWidth: "44ch" }}>
+            <p className="eyebrow">Contact</p>
+            <h1 style={{ fontSize: "clamp(2.1rem, 5vw, 3.2rem)", color: "#fff" }}>
+              Start a conversation.
+            </h1>
+            <p className="lead">
+              Correspondence is welcome from partners, counterparties, and those
+              we do business with. We aim to reply thoughtfully rather than quickly.
+            </p>
+          </div>
         </div>
       </section>
 
