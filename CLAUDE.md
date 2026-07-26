@@ -85,5 +85,9 @@ bios, real logo, contact-form backend). Keep it current when you touch those.
   or depend on its contents.
 - The repo has **no commits yet** (`git log` is empty). The default branch for
   PRs is `main`.
-- `web/app/icon.svg` is a text-monogram favicon placeholder, to be replaced when
-  a real mark exists.
+- The brand mark is the "A" (Atlantic) monogram. `web/public/logo-mark.png` is
+  the transparent on-page logo (navy letterform + gold swoosh; on dark
+  backgrounds it needs the light chip — see `LogoMark`'s `tile` prop in
+  `web/app/components/Logo.tsx`). `web/app/icon.png` is the browser-tab favicon
+  (Next App Router auto-serves it); `web/public/logo-original.png` is the
+  untrimmed source.

@@ -36,7 +36,11 @@ app/
     Header.tsx        Sticky header + nav
     Footer.tsx        Footer with contact block
     ContactForm.tsx   Client-side mailto form (no backend yet)
-  icon.svg            Favicon (monogram placeholder)
+    Logo.tsx          "A" monogram mark (shared by header + footer)
+  icon.png            Favicon — the "A" monogram (App Router auto-serves it)
+public/
+  logo-mark.png       On-page logo, transparent background
+  logo-original.png   Untrimmed source artwork
 ```
 
 ## Editing content
@@ -61,7 +65,7 @@ confirmed before this site goes public:
 | **Mission statement** | Home page | `[DRAFT — pending director sign-off]` |
 | **Values wording** | Home page | `[DRAFT — pending sign-off]`, thematic only |
 | **Director bios / board section** | About page | Reserved placeholder — **no names published until each director explicitly approves** |
-| **Logo / wordmark** | Header, footer, `icon.svg` | Text monogram placeholder — replace with real mark when available |
+| **Logo / wordmark** | Header, footer, favicon | ✅ "A" monogram in place (`public/logo-mark.png`, `app/icon.png`) |
 | **Contact form backend** | `app/components/ContactForm.tsx` | Opens the visitor's mail client; add a server handler when required |
 
 ### Content guardrails (from the founding brief)

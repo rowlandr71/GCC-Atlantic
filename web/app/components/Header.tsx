@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { nav, site } from "@/app/site.config";
+import LogoMark from "@/app/components/Logo";
 
 export default function Header() {
   const pathname = usePathname();
@@ -11,9 +12,7 @@ export default function Header() {
     <header className="site-header">
       <div className="container site-header__inner">
         <Link href="/" className="wordmark" aria-label={`${site.name} — home`}>
-          <span className="wordmark__mark" aria-hidden="true">
-            GCC
-          </span>
+          <LogoMark />
           <span>{site.name}</span>
         </Link>
 

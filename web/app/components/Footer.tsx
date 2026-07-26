@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { nav, site } from "@/app/site.config";
+import LogoMark from "@/app/components/Logo";
 
 export default function Footer() {
   const year = 2026; // static; update as needed
@@ -10,9 +11,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <span className="wordmark" style={{ marginBottom: "1rem", display: "inline-flex" }}>
-              <span className="wordmark__mark" aria-hidden="true">
-                GCC
-              </span>
+              <LogoMark tile />
               <span>{site.name}</span>
             </span>
             <p style={{ color: "#9aa4ae", maxWidth: "34ch", marginTop: "0.75rem" }}>
