@@ -1,0 +1,13 @@
+{
+  // Cloudflare Workers config — serves the Next.js static export as static
+  // assets (no server-side Worker code). `npx wrangler deploy` uploads `out/`.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "gcc-atlantic",
+  "compatibility_date": "2025-06-01",
+  "assets": {
+    "directory": "./out",
+    // Serve /about -> out/about/index.html, and out/404.html on misses.
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
