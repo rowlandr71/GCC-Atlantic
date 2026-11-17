@@ -2,12 +2,14 @@
   "name": "gcc-web",
   "version": "0.1.0",
   "private": true,
-  "description": "GCC — corporate website and web app foundation",
+  "description": "GCC Atlantic corporate website and web app foundation",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "preview": "next build && wrangler dev",
+    "deploy": "next build && wrangler deploy"
   },
   "dependencies": {
     "@fontsource-variable/fraunces": "^5.2.9",

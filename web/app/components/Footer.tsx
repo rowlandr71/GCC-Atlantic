@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { nav, site } from "@/app/site.config";
+import { addressLine, legalNav, nav, site } from "@/app/site.config";
 import LogoMark from "@/app/components/Logo";
+import CurrentYear from "@/app/components/CurrentYear";
 
 export default function Footer() {
-  const year = 2026; // static; update as needed
-
   return (
     <footer className="site-footer">
       <div className="container">
@@ -12,10 +11,10 @@ export default function Footer() {
           <div className="footer-brand">
             <span className="wordmark" style={{ marginBottom: "1rem", display: "inline-flex" }}>
               <LogoMark tile />
-              <span>{site.name}</span>
+              <span>{site.legalName}</span>
             </span>
             <p style={{ color: "#9aa4ae", maxWidth: "34ch", marginTop: "0.75rem" }}>
-              {site.incorporation} Reporting in {site.reportingCurrency}.
+              {site.legalForm} {site.registration}.
             </p>
           </div>
 
@@ -31,28 +30,34 @@ export default function Footer() {
           </div>
 
           <div className="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              {legalNav.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href}>{item.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="footer-col">
             <h4>Contact</h4>
             <ul>
               <li>
                 <a href={`mailto:${site.email}`}>{site.email}</a>
               </li>
-              <li>
-                <a href={`tel:${site.phones[0].replace(/\s/g, "")}`}>{site.phones[0]}</a>
-              </li>
-              <li style={{ color: "#9aa4ae", marginTop: "0.5rem" }}>
-                {site.address.line1}, {site.address.line2}
-                <br />
-                {site.address.country}
-              </li>
+            </ul>
+            <h4 style={{ marginTop: "1.5rem" }}>Registered office</h4>
+            <ul>
+              <li style={{ color: "#9aa4ae" }}>{addressLine}</li>
             </ul>
           </div>
         </div>
 
         <div className="footer-bottom">
           <span>
-            © {year} {site.legalName}. All rights reserved.
+            © <CurrentYear /> {site.legalName}. All rights reserved.
           </span>
-          <span>{site.incorporation}</span>
         </div>
       </div>
     </footer>

@@ -1,20 +1,21 @@
 /**
  * Central site configuration.
  *
- * Everything the rest of the site reads about GCC's identity and contact
- * details lives here, so updating the domain, phone numbers, or email is a
- * one-file change.
+ * Everything the rest of the site reads about GCC Atlantic's identity and
+ * contact details lives here, so updating the domain, email or address is a
+ * one-file change (metadata, canonical URLs, footer, contact and legal pages).
  *
- * Changing a value here updates the whole site (metadata, canonical URLs,
- * footer, contact page) in one place.
+ * Source: "GCC Atlantic Website Copy & Implementation Brief" v2.1, Section 2.
+ * No telephone numbers and no reporting currency are published (A-3).
  */
 
 export const site = {
   // --- Identity -----------------------------------------------------------
-  name: "GCC Atlantic",      // full brand name
-  shortName: "GCC",          // shortform, used where brevity reads better
-  legalName: "GCC Atlantic",
-  tagline: "An equity holding and investment company.",
+  name: "GCC Atlantic",              // brand name: titles, headings, search text
+  shortName: "GCC",                  // only after "GCC Atlantic" has appeared on a page
+  legalName: "GCC Atlantic Limited", // registered company name
+  tagline: "An investment holding company.",
+  registration: "RC 7059611",
 
   // --- Domain -------------------------------------------------------------
   domain: "gccatlantic.com",
@@ -22,20 +23,29 @@ export const site = {
 
   // --- Contact ------------------------------------------------------------
   email: "info@gccatlantic.com",
-  phones: ["0702 602 5422", "0814 632 4406", "0806 249 6340"],
   address: {
-    line1: "12, Ojoboh",
-    line2: "Ajah, Lagos",
+    line1: "No. 12 Ojoboh Street",
+    line2: "Ajah, Lagos State",
     country: "Nigeria",
   },
 
-  // --- Facts (public, from the founding brief) ---------------------------
-  incorporation: "A private company limited by shares, incorporated in Nigeria.",
-  reportingCurrency: "GBP",
+  // --- Facts --------------------------------------------------------------
+  legalForm: "A private company limited by shares, incorporated in Nigeria.",
 } as const;
+
+/** Registered office on one line. */
+export const addressLine = `${site.address.line1}, ${site.address.line2}, ${site.address.country}`;
+
+/** Tagline without the trailing full stop, for titles. */
+export const taglineTitle = site.tagline.replace(/\.$/, "");
 
 export const nav = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
+] as const;
+
+export const legalNav = [
+  { href: "/important-information", label: "Important information" },
+  { href: "/privacy-notice", label: "Privacy notice" },
 ] as const;

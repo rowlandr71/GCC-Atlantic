@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="container site-header__inner">
-        <Link href="/" className="wordmark" aria-label={`${site.name} — home`}>
+        <Link href="/" className="wordmark" aria-label={`${site.name}, home`}>
           <LogoMark />
           <span>{site.name}</span>
         </Link>

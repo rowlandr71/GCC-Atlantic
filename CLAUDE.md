@@ -53,9 +53,13 @@ library. Understanding these three conventions is enough to work productively:
 
 Path alias: `@/*` maps to the `web/` root (see `tsconfig.json`), so imports read
 `@/app/site.config`. Pages are Server Components by default; only `Header.tsx`
-(uses `usePathname`) and `ContactForm.tsx` (uses `useState`) are `"use client"`.
-The contact form is intentionally backend-free — it composes a `mailto:` link
-and opens the visitor's mail client; nothing is sent or stored server-side.
+(uses `usePathname`), `ContactForm.tsx` and `CurrentYear.tsx` are `"use client"`.
+The site is a static export (`output: "export"`) served by Cloudflare Workers
+static assets (`web/wrangler.jsonc`). The only server code is
+`web/worker/index.ts`, which runs for `/api/*` and handles `POST /api/contact`:
+it validates the contact form and emails the enquiry to `info@gccatlantic.com`
+via Resend (`RESEND_API_KEY` secret). Nothing is stored. `npm run dev` has no
+`/api` route; use `npm run preview` (Wrangler) to test the form end to end.
 
 ## Content guardrails (non-negotiable — from the founding brief)
 
@@ -68,23 +72,25 @@ style preferences:
   GCC's discipline — never a number.
 - **No director names, titles, photos, or bios** until each director has
   approved public use of their details in writing. The About page's leadership
-  block is a deliberate reserved placeholder — leave it as one.
+  block is a single approved-for-staging sentence with no names.
 - **Restraint is the brand.** No hype, no stock imagery. The visual language is
   deliberately spare (deep navy, warm paper, one muted brass accent).
 - **Draft content is flagged in the UI** with the `.draft` badge (e.g. the home
   mission/values copy marked "pending director sign-off"). Preserve these flags;
   don't quietly promote draft copy to final.
 
-The `web/README.md` "Placeholders awaiting real input" table tracks every item
-that must be confirmed before launch (domain, mission/values wording, director
-bios, real logo, contact-form backend). Keep it current when you touch those.
+Page copy comes from the *Website Copy & Implementation Brief* v2.1. The
+`web/README.md` "Items open before launch" table tracks every badge, legal
+draft and launch condition (C1 to C7). Keep it current when you touch those.
+No telephone numbers and no reporting currency are published anywhere.
 
 ## Notes
 
 - `_to_delete/` is gitignored local transfer scratch — ignore it; never commit
   or depend on its contents.
-- The repo has **no commits yet** (`git log` is empty). The default branch for
-  PRs is `main`.
+- The default branch for PRs is `main`.
+- Commits through the cloud mount can fail on `.git/index.lock`; commit from a
+  local terminal.
 - The brand mark is the "A" (Atlantic) monogram. `web/public/logo-mark.png` is
   the transparent on-page logo (navy letterform + gold swoosh; on dark
   backgrounds it needs the light chip — see `LogoMark`'s `tile` prop in

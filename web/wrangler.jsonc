@@ -1,11 +1,17 @@
 {
-  // Cloudflare Workers config — serves the Next.js static export as static
-  // assets (no server-side Worker code). `npx wrangler deploy` uploads `out/`.
+  // Cloudflare Workers config. The Next.js static export in `out/` is served
+  // as static assets; the Worker in worker/index.ts runs only for /api/*
+  // (the contact form endpoint). `npm run deploy` builds and uploads both.
+  // Secrets: `npx wrangler secret put RESEND_API_KEY` (see worker/index.ts).
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "gcc-atlantic",
+  "main": "worker/index.ts",
   "compatibility_date": "2025-06-01",
+  "routes": [{ "pattern": "gccatlantic.com", "custom_domain": true }],
   "assets": {
     "directory": "./out",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"],
     // Serve /about -> out/about/index.html, and out/404.html on misses.
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
