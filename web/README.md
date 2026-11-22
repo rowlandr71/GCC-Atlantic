@@ -91,14 +91,14 @@ removed once their launch conditions closed (A-23).
 | **Mission statement** | Home: Who we are | Closed 17 Nov 2026. Badge removed after C1 and C4 |
 | **Capital stewardship principles** | Home: What guides us | Closed 17 Nov 2026. Badge removed after C1 and C4. Replace the set when the Board signs the Final Five Core Values |
 | **Leadership sentence** | About: Leadership | Closed 17 Nov 2026. Badge removed after C1 and C4. Still no names, titles, photos or bios |
-| **Legal pages** | Important information, Privacy notice | Closed 17 Nov 2026. Counsel's wording approved (C3); badge and `noindex` removed. Any text change needs counsel review again |
-| **Privacy notice date** | `app/privacy-notice/page.tsx` (`LAST_UPDATED`) | Closed 17 Nov 2026 (set to the launch date). Update on every change |
-| **Cookies statement** | Privacy notice | Accurate only while no analytics/advertising cookies are set (C7) |
+| **Legal pages** | Important information, Privacy notice | Closed 17 Nov 2026. Counsel's wording approved (C3); badge and `noindex` removed. Any text change needs counsel review again, unless a director approves it in writing with counsel review waived (as for the 22 Nov 2026 "Cookies and analytics" change) |
+| **Privacy notice date** | `app/privacy-notice/page.tsx` (`LAST_UPDATED`) | Set to 22 Nov 2026 for the "Cookies and analytics" change. Update on every change |
+| **Cookies statement** | Privacy notice | Closed 22 Nov 2026. Rewritten as "Cookies and analytics" to disclose cookieless Cloudflare Web Analytics; approved by the CTO and director, counsel review waived. Still accurate only while no analytics/advertising cookies are set (C7) |
 | **Domain + mailbox** | Cloudflare / Google Workspace | Closed 17 Nov 2026. `gccatlantic.com` served by the Worker; `www` 301-redirects to the apex; `info@gccatlantic.com` live (C2, A-25) |
 | **Contact form email provider** | `worker/index.ts`, Resend | Closed 17 Nov 2026. `gccatlantic.com` verified in Resend; send-only `RESEND_API_KEY` set as a Worker secret; tested live |
 | **Optional "structured finance and venture debt" sentence** | About: How we invest | Closed 17 Nov 2026: omitted at launch. Add only after the C6 approvals and C3 review are recorded |
 | **Remaining page copy** | All pages | Closed 17 Nov 2026. Board approved (C4) |
-| **Cloudflare Web Analytics** | Cloudflare dashboard | **Open.** Not enabled. Counsel to confirm the Privacy notice covers cookieless visit analytics before it is switched on |
+| **Cloudflare Web Analytics** | Cloudflare dashboard | Approved 22 Nov 2026 by the CTO and director (counsel review waived). Switch on only after the updated Privacy notice is deployed |
 
 ### Content guardrails (from the founding brief)
 

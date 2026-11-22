@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import LegalPage from "@/app/components/LegalPage";
 import { addressLine, site } from "@/app/site.config";
 
-// Copy source: brief v2.1, Section 6.2. Approved by counsel (C3).
-// Set LAST_UPDATED to the launch date at publication and on every change.
+// Copy source: brief v2.1, Section 6.2. Approved by counsel (C3); the
+// "Cookies and analytics" section was approved by the CTO and director on
+// 22 November 2026 (counsel review waived).
+// Set LAST_UPDATED on every change.
 // The Cookies statement holds only while the site sets no analytics or
-// advertising cookies (condition C7). Change it before adding analytics.
+// advertising cookies (condition C7). Cloudflare Web Analytics is cookieless.
 
-const LAST_UPDATED = "17 November 2026";
+const LAST_UPDATED = "22 November 2026";
 
 export const metadata: Metadata = {
   title: "Privacy notice",
@@ -51,10 +53,12 @@ export default function PrivacyNoticePage() {
         of our correspondence, and then delete them.
       </p>
 
-      <h2>Cookies</h2>
+      <h2>Cookies and analytics</h2>
       <p>
         This website uses only cookies that are necessary for it to work. It
-        does not use advertising cookies.
+        does not use advertising cookies. We use Cloudflare Web Analytics, which
+        does not use cookies, to count visits and see which pages are read. It
+        does not identify you or track you across other websites.
       </p>
 
       <h2>Your rights</h2>
