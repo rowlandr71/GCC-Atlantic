@@ -34,6 +34,8 @@ app/
   contact/page.tsx              Contact
   important-information/page.tsx  Legal: Important information (counsel-approved, C3)
   privacy-notice/page.tsx       Legal: Privacy notice (counsel-approved, C3)
+  sitemap.ts                    /sitemap.xml, built from the nav + legal nav in site.config.ts
+  robots.ts                     /robots.txt (Cloudflare prepends its managed content signals)
   site.config.ts                ← Single source of truth: name, legal name, RC, domain, email, address
   globals.css                   Design system (palette, typography, components)
   components/
