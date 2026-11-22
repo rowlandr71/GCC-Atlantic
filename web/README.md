@@ -98,7 +98,7 @@ removed once their launch conditions closed (A-23).
 | **Contact form email provider** | `worker/index.ts`, Resend | Closed 17 Nov 2026. `gccatlantic.com` verified in Resend; send-only `RESEND_API_KEY` set as a Worker secret; tested live |
 | **Optional "structured finance and venture debt" sentence** | About: How we invest | Closed 17 Nov 2026: omitted at launch. Add only after the C6 approvals and C3 review are recorded |
 | **Remaining page copy** | All pages | Closed 17 Nov 2026. Board approved (C4) |
-| **Cloudflare Web Analytics** | Cloudflare dashboard | Approved 22 Nov 2026 by the CTO and director (counsel review waived). Switch on only after the updated Privacy notice is deployed |
+| **Cloudflare Web Analytics** | Cloudflare dashboard | Closed 22 Nov 2026. Approved by the CTO and director (counsel review waived). Found already enabled (automatic beacon injection) before the notice was updated; disclosed in the Privacy notice deployed 22 Nov 2026 |
 
 ### Content guardrails (from the founding brief)
 
