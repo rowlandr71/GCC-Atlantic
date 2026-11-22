@@ -51,8 +51,8 @@ const principles = [
 ];
 
 // Structured data for search engines (schema.org Organization). Only facts
-// already public on the site; the RC number is deliberately left out.
-const [addressLocality, addressRegion] = site.address.line2.split(", ");
+// already public on the site; the RC number and address are deliberately
+// left out.
 const organization = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -61,13 +61,6 @@ const organization = {
   url: site.url,
   logo: `${site.url}/logo-mark.png`,
   email: site.email,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: site.address.line1,
-    addressLocality,
-    addressRegion,
-    addressCountry: "NG",
-  },
   sameAs: [site.linkedin],
 };
 
