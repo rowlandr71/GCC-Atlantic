@@ -29,6 +29,9 @@ export const site = {
     country: "Nigeria",
   },
 
+  // --- Official profiles ----------------------------------------------------
+  linkedin: "https://www.linkedin.com/company/gcc-atlantic-limited/",
+
   // --- Facts --------------------------------------------------------------
   legalForm: "A private company limited by shares, incorporated in Nigeria.",
 } as const;

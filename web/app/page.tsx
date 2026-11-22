@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { site } from "@/app/site.config";
 
 // Copy source: Website Copy & Implementation Brief v2.1, Section 3.
 // Board approval (C1, C4) confirmed 17 Nov 2026; staging badges removed (A-23).
@@ -49,9 +50,27 @@ const principles = [
   },
 ];
 
+// Structured data for search engines (schema.org Organization). Only facts
+// already public on the site; the RC number and address are deliberately
+// left out.
+const organization = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: site.name,
+  legalName: site.legalName,
+  url: site.url,
+  logo: `${site.url}/logo-mark.png`,
+  email: site.email,
+  sameAs: [site.linkedin],
+};
+
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
+      />
       {/* Opening banner -------------------------------------------------- */}
       <section className="hero">
         <div className="container">
