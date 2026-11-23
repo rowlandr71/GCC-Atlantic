@@ -464,6 +464,24 @@ html { scroll-padding-top: 5.5rem; }
   color: var(--slate-light);
 }
 
+/* Skip link: hidden until it receives keyboard focus ---------------------- */
+.skip-link {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 1.5px solid var(--brass);
+  border-radius: 2px;
+  transform: translateY(-200%);
+}
+.skip-link:focus { transform: none; }
+main:focus { outline: none; }
+
 /* Utilities -------------------------------------------------------------- */
 .stack-sm > * + * { margin-top: 0.75rem; }
 .mt-2 { margin-top: 2rem; }

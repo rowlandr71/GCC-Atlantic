@@ -1,0 +1,4 @@
+# Cloudflare static-assets header rules (copied into out/ by next build).
+# The share image is exported without a file extension; label it as a PNG.
+/opengraph-image
+  Content-Type: image/png

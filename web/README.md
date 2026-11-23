@@ -28,7 +28,9 @@ npm run lint     # lint
 
 ```
 app/
-  layout.tsx                    Root layout, fonts, site-wide metadata
+  layout.tsx                    Root layout, fonts, site-wide metadata, "Skip to content" link
+  not-found.tsx                 Branded 404 page (exported as out/404.html)
+  opengraph-image.tsx           Share-preview image, rendered at build time
   page.tsx                      Home
   about/page.tsx                About
   contact/page.tsx              Contact
@@ -49,6 +51,7 @@ app/
 worker/
   index.ts                      Cloudflare Worker: /api/contact → emails info@gccatlantic.com
 public/
+  _headers                      Cloudflare header rules (serves the share image as PNG)
   logo-mark.png                 On-page logo, transparent background
   logo-original.png             Untrimmed source artwork
 wrangler.jsonc                  Cloudflare config: static assets + Worker for /api/*
